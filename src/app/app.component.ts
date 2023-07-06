@@ -10,9 +10,10 @@ export class AppComponent {
   title = 'EventTracingFrontend';
 
   constructor(private router: Router) {}
+  events: string[] = [];
+  opened = true;
 
-  goToEventList(): void {
-    this.router.navigateByUrl('/events');
-    console.log('alsdfkj');
+  navigate(route: string) {
+    this.router.navigate([`/${route}`]);
   }
 }
