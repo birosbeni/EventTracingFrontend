@@ -50,15 +50,17 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <button
-      mat-raised-button
-      class="text-uppercase"
-      [disabled]="eventForm.invalid || !eventForm.dirty"
-      type="submit"
-      (click)="createEvent()"
-      color="primary"
-    >
-      Mentés
-    </button>
+    <div class="button-div">
+      <button
+        mat-raised-button
+        class="text-uppercase"
+        [disabled]="eventForm.invalid || !eventForm.dirty"
+        type="submit"
+        (click)="createEvent()"
+        color="primary"
+      >
+        Mentés
+      </button>
+    </div>
   </form>
 </div>

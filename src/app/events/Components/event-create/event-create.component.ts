@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EventDetails } from '../../models/event-details.model';
+import { EventService } from '../../service/event.service';
 
 @Component({
   selector: 'app-event-create',
@@ -7,7 +8,12 @@ import { EventDetails } from '../../models/event-details.model';
   styleUrls: ['./event-create.component.scss'],
 })
 export class EventCreateComponent {
+  constructor(private _eventService: EventService) {}
+
   addEvent(newEvent: EventDetails) {
-    console.log(newEvent);
+    this._eventService.createEvent(newEvent).subscribe((resp) => {
+      console.log('léaksdfj');
+      console.log(resp);
+    });
   }
 }

@@ -1,7 +1,15 @@
 .inputs {
+  display: flex;
+  justify-content: space-around;
   margin-top: 20px;
 }
 
 .input-div {
   display: inline;
+}
+
+.button-div {
+  display: flex;
+  justify-content: end;
+  margin: 20px 5px;
 }

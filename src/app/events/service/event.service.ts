@@ -22,11 +22,11 @@ export class EventService {
     return this.http.get<EventDetails>(`${this.apiUrl}/event/${id}`);
   }
 
-  public createEvent(event: Event): Observable<any> {
+  public createEvent(event: EventDetails): Observable<any> {
     return this.http.post(`${this.apiUrl}/event`, event);
   }
 
-  public updateEvent(id: string, event: Event): Observable<any> {
+  public updateEvent(id: string, event: EventDetails): Observable<any> {
     return this.http.put(`${this.apiUrl}/event/${id}`, event);
   }
 
