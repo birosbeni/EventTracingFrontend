@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventHeader } from '../../models/event-header.model';
 import { EventService } from '../../service/event.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-events-list',
@@ -11,7 +12,7 @@ export class EventsListComponent implements OnInit {
   events: EventHeader[] = [];
   displayedColumns: string[] = ['id', 'name', 'location'];
 
-  constructor(private _eventService: EventService) {}
+  constructor(private _eventService: EventService, private router: Router) {}
 
   ngOnInit(): void {
     this.getEvents();
@@ -25,5 +26,9 @@ export class EventsListComponent implements OnInit {
 
   rowClick(row: EventHeader) {
     console.log(row);
+  }
+
+  createButtonClick() {
+    this.router.navigate([`/events/create`]);
   }
 }

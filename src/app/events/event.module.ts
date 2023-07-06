@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { NgIf, NgFor } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 import { EventsListComponent } from './Components/events-list/events-list.component';
 import { EventDetailsComponent } from './Components/event-details/event-details.component';
@@ -25,6 +26,7 @@ import { EventFormComponent } from './Components/event-form/event-form.component
     MatCardModule,
     MatIconModule,
     MatTableModule,
+    MatButtonModule,
     NgIf,
     NgFor,
   ],
