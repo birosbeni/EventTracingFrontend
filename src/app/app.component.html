@@ -2,11 +2,11 @@
 
 <mat-sidenav-container>
   <mat-sidenav opened mode="side">
-    <button mat-button class="menu-button">
+    <button mat-button class="menu-button" (click)="navigate('events')">
       <mat-icon>home</mat-icon>
       <span>Lista</span>
     </button>
-    <button mat-button class="menu-button">
+    <button mat-button class="menu-button" (click)="navigate('events/id')">
       <mat-icon>info</mat-icon>
       <span>Létrehozás</span>
     </button>

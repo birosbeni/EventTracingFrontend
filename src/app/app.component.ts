@@ -11,5 +11,9 @@ export class AppComponent {
 
   constructor(private router: Router) {}
   events: string[] = [];
-  opened: boolean = true;
+  opened = true;
+
+  navigate(route: string) {
+    this.router.navigate([`/${route}`]);
+  }
 }

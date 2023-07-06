@@ -7,11 +7,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { EventsListComponent } from './Components/events-list/events-list.component';
 import { EventDetailsComponent } from './Components/event-details/event-details.component';
 import { EventService } from './service/event.service';
+import { EventCreateComponent } from './Components/event-create/event-create.component';
 
 @NgModule({
-  declarations: [EventsListComponent, EventDetailsComponent],
+  declarations: [EventsListComponent, EventDetailsComponent, EventCreateComponent],
   imports: [CommonModule, MatExpansionModule, MatCardModule, MatIconModule],
-  exports: [EventsListComponent, EventDetailsComponent],
+  exports: [EventsListComponent, EventDetailsComponent, MatIconModule],
   providers: [EventService],
 })
 export class EventModule {}
