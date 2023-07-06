@@ -12,7 +12,11 @@ const routes: Routes = [
     title: 'events/create',
     component: EventCreateComponent,
   },
-  { path: 'events/:id', title: 'event/id', component: EventDetailsComponent },
+  {
+    path: 'events/:eventId',
+    title: 'event/details',
+    component: EventDetailsComponent,
+  },
   { path: '**', component: EventsListComponent },
 ];
 

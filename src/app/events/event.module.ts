@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { RouterModule } from '@angular/router';
 
 import { EventsListComponent } from './Components/events-list/events-list.component';
 import { EventDetailsComponent } from './Components/event-details/event-details.component';
@@ -34,6 +35,7 @@ import { EventFormComponent } from './Components/event-form/event-form.component
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    RouterModule,
     NgIf,
     NgFor,
   ],
