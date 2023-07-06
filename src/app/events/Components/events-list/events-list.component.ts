@@ -9,6 +9,7 @@ import { EventService } from '../../service/event.service';
 })
 export class EventsListComponent implements OnInit {
   events: EventHeader[] = [];
+  displayedColumns: string[] = ['id', 'name', 'location'];
 
   constructor(private _eventService: EventService) {}
 
@@ -20,6 +21,9 @@ export class EventsListComponent implements OnInit {
     this._eventService.getEvents().subscribe((resp) => {
       this.events = resp;
     });
-    console.log('List: ', this.events);
+  }
+
+  rowClick(row: EventHeader) {
+    console.log(row);
   }
 }
