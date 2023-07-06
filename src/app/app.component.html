@@ -1,3 +1,17 @@
-<app-events-list></app-events-list>
-<!-- <button (click)="goToEventList()">Lista</button>
-<a routerLink="/events">Go to About Page</a> -->
+<mat-toolbar> Event tracing </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side">
+    <button mat-button class="menu-button">
+      <mat-icon>home</mat-icon>
+      <span>Lista</span>
+    </button>
+    <button mat-button class="menu-button">
+      <mat-icon>info</mat-icon>
+      <span>Létrehozás</span>
+    </button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
