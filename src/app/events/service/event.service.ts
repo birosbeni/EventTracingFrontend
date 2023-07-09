@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { EventHeader } from '../models/event-header.model';
 import { EventDetails } from '../models/event-details.model';
+import { CreateEvent } from '../models/create-event.mocel';
 
 @Injectable()
 export class EventService {
@@ -22,11 +23,11 @@ export class EventService {
     return this.http.get<EventDetails>(`${this.apiUrl}/event/${id}`);
   }
 
-  public createEvent(event: Event): Observable<any> {
+  public createEvent(event: CreateEvent): Observable<any> {
     return this.http.post(`${this.apiUrl}/event`, event);
   }
 
-  public updateEvent(id: string, event: Event): Observable<any> {
+  public updateEvent(id: string, event: EventDetails): Observable<any> {
     return this.http.put(`${this.apiUrl}/event/${id}`, event);
   }
 
