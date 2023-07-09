@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { EventDetails } from '../../models/event-details.model';
 import { EventService } from '../../service/event.service';
+import { CreateEvent } from '../../models/create-event.mocel';
 
 @Component({
   selector: 'app-event-create',
@@ -11,9 +12,7 @@ export class EventCreateComponent {
   constructor(private _eventService: EventService) {}
 
   addEvent(newEvent: EventDetails) {
-    this._eventService.createEvent(newEvent).subscribe((resp) => {
-      console.log('léaksdfj');
-      console.log(resp);
-    });
+    const event: CreateEvent = newEvent;
+    this._eventService.createEvent(event);
   }
 }
