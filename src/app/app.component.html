@@ -1,7 +1,17 @@
-<mat-toolbar> Event tracing </mat-toolbar>
+<mat-toolbar>
+  <button
+    mat-icon-button
+    *ngIf="sidenav.mode === 'over'"
+    (click)="sidenav.toggle()"
+  >
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon
+    ><mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+  Event tracing
+</mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav opened mode="side">
+  <mat-sidenav #sidenav="matSidenav">
     <button mat-button class="menu-button" (click)="navigate('events')">
       <span>Események</span>
     </button>
