@@ -5,3 +5,16 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+.list-table {
+  width: 100% !important;
+  overflow: auto !important;
+}
+
+.min-width-10 {
+  min-width: 10rem;
+}
+
+.min-width-20 {
+  min-width: 20rem;
+}
