@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { EventService } from '../../service/event.service';
 import { EventDetails } from '../../models/event-details.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, Validators } from '@angular/forms';
 import { CreateEvent } from '../../models/create-event.mocel';
 import { IFormEventDetails } from './event-form.type';
@@ -29,7 +29,8 @@ export class EventDetailsComponent {
   constructor(
     private _eventService: EventService,
     private route: ActivatedRoute,
-    private _formBuilder: FormBuilder
+    private _formBuilder: FormBuilder,
+    private router: Router
   ) {
     this.id = this.route.snapshot.paramMap.get('eventId') ?? '';
     if (this.id) {
@@ -70,10 +71,12 @@ export class EventDetailsComponent {
     };
     this._eventService
       .createEvent(event)
-      .subscribe((resp) => console.log(resp));
+      .subscribe(() => this.router.navigate(['events']));
   }
 
   updateEvent(id: string, _event: EventDetails) {
-    this._eventService.updateEvent(id, _event);
+    this._eventService
+      .updateEvent(id, _event)
+      .subscribe(() => this.router.navigate(['events']));
   }
 }
