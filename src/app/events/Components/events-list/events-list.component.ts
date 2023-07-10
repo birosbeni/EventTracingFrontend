@@ -17,6 +17,7 @@ export class EventsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEvents();
+    this._eventService.deleteEvent('5c0ae06e-1f0f-487f-8e65-6422846e8068');
   }
 
   getEvents() {
@@ -28,8 +29,8 @@ export class EventsListComponent implements OnInit {
   createButtonClick() {
     this.router.navigate([`/events/create`]);
   }
+
   deleteButtonClick(event: EventDetails) {
-    this._eventService.deleteEvent(event.id);
-    this.getEvents();
+    this._eventService.deleteEvent(event.id).subscribe(() => this.getEvents());
   }
 }
