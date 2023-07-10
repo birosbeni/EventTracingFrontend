@@ -14,16 +14,9 @@ import { RouterModule } from '@angular/router';
 import { EventsListComponent } from './Components/events-list/events-list.component';
 import { EventDetailsComponent } from './Components/event-details/event-details.component';
 import { EventService } from './service/event.service';
-import { EventCreateComponent } from './Components/event-create/event-create.component';
-import { EventFormComponent } from './Components/event-form/event-form.component';
 
 @NgModule({
-  declarations: [
-    EventsListComponent,
-    EventDetailsComponent,
-    EventCreateComponent,
-    EventFormComponent,
-  ],
+  declarations: [EventsListComponent, EventDetailsComponent],
   imports: [
     CommonModule,
     MatExpansionModule,

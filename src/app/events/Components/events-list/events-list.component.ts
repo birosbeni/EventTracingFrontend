@@ -28,8 +28,13 @@ export class EventsListComponent implements OnInit {
   createButtonClick() {
     this.router.navigate([`/events/create`]);
   }
+
   deleteButtonClick(event: EventDetails) {
+    this.deleteEvent(event);
+    // this.getEvents();
+  }
+
+  deleteEvent(event: EventDetails) {
     this._eventService.deleteEvent(event.id);
-    this.getEvents();
   }
 }

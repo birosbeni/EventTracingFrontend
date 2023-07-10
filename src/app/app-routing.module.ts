@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EventsListComponent } from './events/Components/events-list/events-list.component';
 import { EventDetailsComponent } from './events/Components/event-details/event-details.component';
-import { EventCreateComponent } from './events/Components/event-create/event-create.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
@@ -10,7 +9,7 @@ const routes: Routes = [
   {
     path: 'events/create',
     title: 'events/create',
-    component: EventCreateComponent,
+    component: EventDetailsComponent,
   },
   {
     path: 'events/:eventId',

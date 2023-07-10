@@ -15,10 +15,6 @@ export class EventService {
     return this.http.get<EventHeader[]>(`${this.apiUrl}/event`);
   }
 
-  public getEventsByLocation(location: string): Observable<EventHeader[]> {
-    return this.http.get<EventHeader[]>(`${this.apiUrl}/event/${location}`);
-  }
-
   public getEventById(id: string): Observable<EventDetails> {
     return this.http.get<EventDetails>(`${this.apiUrl}/event/${id}`);
   }
