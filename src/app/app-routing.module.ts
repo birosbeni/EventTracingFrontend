@@ -5,15 +5,15 @@ import { EventDetailsComponent } from './events/Components/event-details/event-d
 
 const routes: Routes = [
   { path: '', redirectTo: '/events', pathMatch: 'full' },
-  { path: 'events', title: 'events', component: EventsListComponent },
+  { path: 'events', title: 'Események', component: EventsListComponent },
   {
     path: 'events/create',
-    title: 'events/create',
+    title: 'Esemény létrehozása',
     component: EventDetailsComponent,
   },
   {
     path: 'events/:eventId',
-    title: 'event/details',
+    title: 'Esemény adatok',
     component: EventDetailsComponent,
   },
   { path: '**', component: EventsListComponent },

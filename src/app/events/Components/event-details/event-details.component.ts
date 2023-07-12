@@ -19,11 +19,8 @@ export class EventDetailsComponent {
   eventForm = this._formBuilder.nonNullable.group<IFormEventDetails>({
     name: this._formBuilder.nonNullable.control('', Validators.required),
     location: this._formBuilder.nonNullable.control('', Validators.required),
-    country: this._formBuilder.nonNullable.control('', Validators.required),
-    capacity: this._formBuilder.nonNullable.control(1, [
-      Validators.required,
-      Validators.min(1),
-    ]),
+    country: this._formBuilder.nonNullable.control(''),
+    capacity: this._formBuilder.nonNullable.control(0),
   });
 
   constructor(
