@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { EventService } from '../../service/event.service';
 import { EventDetails } from '../../models/event-details.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { CreateEvent } from '../../models/create-event.mocel';
 import { IFormEventDetails } from './event-form.type';
 
@@ -15,10 +15,11 @@ export class EventDetailsComponent {
   id?: string;
   event?: EventDetails;
   date?: Date;
+  errors: string[] = [];
 
   eventForm = this._formBuilder.nonNullable.group<IFormEventDetails>({
-    name: this._formBuilder.nonNullable.control('', Validators.required),
-    location: this._formBuilder.nonNullable.control('', Validators.required),
+    name: this._formBuilder.nonNullable.control(''),
+    location: this._formBuilder.nonNullable.control(''),
     country: this._formBuilder.nonNullable.control(''),
     capacity: this._formBuilder.nonNullable.control(0),
   });
@@ -60,20 +61,36 @@ export class EventDetailsComponent {
   }
 
   createEvent(newEvent: EventDetails) {
+    this.errors = [];
+
     const event: CreateEvent = {
       capacity: newEvent.capacity,
       country: newEvent.country,
       location: newEvent.location,
       name: newEvent.name,
     };
-    this._eventService
-      .createEvent(event)
-      .subscribe(() => this.router.navigate(['events']));
+    this._eventService.createEvent(event).subscribe(
+      () => {
+        this.router.navigate(['events']);
+      },
+      (error) => {
+        this.errors = [...this.errors, error.error.errors.Name];
+        this.errors = [...this.errors, error.error.errors.Location];
+      }
+    );
   }
 
   updateEvent(id: string, _event: EventDetails) {
-    this._eventService
-      .updateEvent(id, _event)
-      .subscribe(() => this.router.navigate(['events']));
+    this.errors = [];
+
+    this._eventService.updateEvent(id, _event).subscribe(
+      () => {
+        this.router.navigate(['events']);
+      },
+      (error) => {
+        this.errors = [...this.errors, error.error.errors.Name];
+        this.errors = [...this.errors, error.error.errors.Location];
+      }
+    );
   }
 }
