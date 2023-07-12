@@ -76,6 +76,7 @@ export class EventDetailsComponent {
       (error) => {
         this.errors = [...this.errors, error.error.errors.Name];
         this.errors = [...this.errors, error.error.errors.Location];
+        this.errors = [...this.errors, error.error.errors.Capacity];
       }
     );
   }
@@ -90,6 +91,7 @@ export class EventDetailsComponent {
       (error) => {
         this.errors = [...this.errors, error.error.errors.Name];
         this.errors = [...this.errors, error.error.errors.Location];
+        this.errors = [...this.errors, error.error.errors.Capacity];
       }
     );
   }
