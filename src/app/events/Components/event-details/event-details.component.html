@@ -3,11 +3,6 @@
     <div class="row">
       <mat-card appearance="raised">
         <mat-card-header class="mat-mdc-card-header">
-          <mat-icon
-            fontIcon="create"
-            color="primary"
-            class="me-3 mr-3"
-          ></mat-icon>
           <mat-card-title
             ><h1 class="text-uppercase fw-bold mat-mdc-card-title-text">
               Esemény információk
@@ -15,26 +10,26 @@
           >
         </mat-card-header>
         <mat-card-content>
-          <div class="inputs">
-            <div class="input-div">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
               <mat-form-field appearance="outline">
                 <mat-label>Név</mat-label>
+                <input name="name" matInput formControlName="name" />
+              </mat-form-field>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <mat-form-field appearance="outline">
+                <mat-label>Helyszín</mat-label>
                 <input name="location" matInput formControlName="location" />
               </mat-form-field>
             </div>
-            <div class="input-div">
-              <mat-form-field appearance="outline">
-                <mat-label>Helyszín</mat-label>
-                <input name="firstName" matInput formControlName="name" />
-              </mat-form-field>
-            </div>
-            <div class="input-div">
+            <div class="col-12 col-md-6 col-lg-3">
               <mat-form-field appearance="outline">
                 <mat-label>Ország</mat-label>
                 <input name="country" matInput formControlName="country" />
               </mat-form-field>
             </div>
-            <div class="input-div">
+            <div class="col-12 col-md-6 col-lg-3">
               <mat-form-field appearance="outline">
                 <mat-label>Kapacitás</mat-label>
                 <input
@@ -45,6 +40,12 @@
                 />
               </mat-form-field>
             </div>
+          </div>
+          <div
+            *ngIf="errors.length > 0"
+            class="row justify-content-around align-items-center m-3"
+          >
+            <mat-error *ngFor="let error of errors">{{ error }}</mat-error>
           </div>
         </mat-card-content>
       </mat-card>
